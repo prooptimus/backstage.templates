@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: cet-circle
+  description: CET Circle
+spec:
+  type: business-unit
+  profile:
+    displayName: CET Circle
+    # email: infrastructure@example.com
+    # picture: https://example.com/groups/bu-infrastructure.jpeg
+  parent: ops
+  children: [backstage, other]
+  members: [vimal]
