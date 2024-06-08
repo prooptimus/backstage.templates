@@ -7,6 +7,9 @@ metadata:
   description: CET
   annotations:
     backstage.io/techdocs-ref: https://github.com/vimal-vijayan/idp.backstage.templates/blob/main/experimental/resource.groups/README.md
+  links:
+    - url: https://github.com/vimal-vijayan/idp.backstage.templates/blob/main/groups/CET/cet_circle.yaml
+      title: cet-circle
 spec:
   type: service
   lifecycle: experimental
