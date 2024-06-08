@@ -1,0 +1,15 @@
+# Example:
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: CET
+  namespace: cet-circle
+  description: CET
+spec:
+  type: service
+  lifecycle: experimental
+  owner: group:cet-managers
+  providesApis:
+    - petstore
+    - internal/streetlights
+    - hello-world
