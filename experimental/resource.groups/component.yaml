@@ -5,6 +5,8 @@ metadata:
   name: CET
   namespace: cet-circle
   description: CET
+  annotations:
+    backstage.io/techdocs-ref: https://github.com/vimal-vijayan/idp.backstage.templates/blob/main/experimental/resource.groups/README.md
 spec:
   type: service
   lifecycle: experimental
