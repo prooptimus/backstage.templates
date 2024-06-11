@@ -2,9 +2,9 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo
-  title: Test Action template
-  description: scaffolder v1beta3 template demo
+  name: beta-rg
+  title: Resource Group Template
+  description: Create Resource Groups
 spec:
   owner: backstage/techdocs-core
   type: service
