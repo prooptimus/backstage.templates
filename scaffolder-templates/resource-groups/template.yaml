@@ -1,0 +1,34 @@
+apiVersion: scaffolder.backstage.io/c1beta3
+kind: Template
+metadata:
+  name: exp-01-demo
+  title: Experimental 01 Demo
+  description: This is basic template for demo purpose
+spec:
+  owner: backstage/techdocs-core
+  type: service
+  parameters:
+    - title: Fill in some steps
+      required:
+        - name:
+      properties:
+        name:
+          title: Name
+          type: string
+          description: "Unique Name of the component"
+          ui:autofocus: true
+          ui:options:
+            rows: 5
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./template
+        values:
+          name: ${{ parameters.name }}
+  outputs:
+    text:
+    - title: more information
+      content: |
+        **Name : ** 
