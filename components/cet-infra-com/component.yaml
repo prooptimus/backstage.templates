@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: CET_Circle
+  name: CET
   description: See what CET does
   tags:
     - cet
@@ -10,13 +10,8 @@ metadata:
     - cloud
     - identity
     - entra-id
-  links:
-    - url: https://admin.example-org.com
-      title: Admin Dashboard
-      icon: dashboard
-      type: admin-dashboard
 spec:
   type: service
   lifecycle: experimental
   owner: cet-relations-team
-  system: public-websites
+  system: cet
