@@ -9,7 +9,7 @@ metadata:
     - azure
     - cloud
     - identity
-    - entraID
+    - entra_id
   links:
     - url: https://admin.example-org.com
       title: Admin Dashboard
