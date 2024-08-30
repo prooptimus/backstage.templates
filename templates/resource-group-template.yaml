@@ -8,20 +8,39 @@ metadata:
 spec:
   owner: backstage/techdocs-core
   type: service
-
+  tags:
+    - azure
+    - infrastructure
+    - cet
+    - resource-group
+    - recommended
   # these are the steps which are rendered in the frontend with the form input
   parameters:
     - title: Fill in some steps
       required:
         - name
+        - location
       properties:
         name:
           title: Name
           type: string
-          description: Unique name of the component
+          description: Resource Group Name
           ui:autofocus: true
           ui:options:
             rows: 5
+        location:
+          title: Location
+          type: string
+          description: Resource Group Location
+          default: westeurope
+          enum:
+            - westeurope
+            - northeurope
+            - swedencentral
+          enumNames:
+            - West Europe
+            - North Europe
+            - Sweden Central
     - title: Choose a location
       required:
         - repoUrl
