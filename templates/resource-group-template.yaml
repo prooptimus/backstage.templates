@@ -49,13 +49,13 @@ spec:
         solutionID:
           title: Solution ID
           type: string
-          ui:field: RepoUrlPicker
+          ui:autofocus: true
           ui:options:
             rows: 5
         owner:
           title: Owner
           type: string
-          description: Repository Owner
+          description: Solution ID or RFD
           ui:autofocus: true
           ui:help: 'Enter multiple owners separated by comma'
           ui:options:
