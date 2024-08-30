@@ -41,17 +41,25 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
-    # - title: Fill solution information
-    #   required:
-    #     - repoUrl
-    #   properties:
-    #     repoUrl:
-    #       title: Repository Location
-    #       type: string
-    #       ui:field: RepoUrlPicker
-    #       ui:options:
-    #         allowedHosts:
-    #           - github.com
+    - title: Fill solution information
+      required:
+        - solutionID
+        - owner
+      properties:
+        solutionID:
+          title: Solution ID
+          type: string
+          ui:field: RepoUrlPicker
+          ui:options:
+            rows: 5
+        owner:
+          title: Owner
+          type: string
+          description: Repository Owner
+          ui:autofocus: true
+          ui:help: 'Enter multiple owners separated by comma'
+          ui:options:
+            rows: 10
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:

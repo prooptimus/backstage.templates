@@ -3,7 +3,7 @@ kind: Template
 # some metadata about the template itself
 metadata:
   name: v1beta3-azure-devops-teams-template
-  title: New Azure DevOps Project
+  title: New Azure DevOps Teams
   description: scaffolder v1beta3 template for creating a Team in Azure DevOps Project
 spec:
   owner: backstage/techdocs-core
