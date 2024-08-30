@@ -5,15 +5,15 @@ metadata:
   name: v1beta3-demo-template
   title: New Resource Group
   description: scaffolder v1beta3 template to create resource group
-spec:
-  owner: backstage/techdocs-core
-  type: service
   tags:
     - azure
     - infrastructure
     - cet
     - resource-group
     - recommended
+spec:
+  owner: backstage/techdocs-core
+  type: service
   # these are the steps which are rendered in the frontend with the form input
   parameters:
     - title: Fill Resource Group Information
