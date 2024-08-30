@@ -2,9 +2,9 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo-template
-  title: New Resource Group
-  description: scaffolder v1beta3 template to create resource group
+  name: v1beta3-azure-devops-template
+  title: New Azure DevOps Project
+  description: scaffolder v1beta3 template for creating a Azure DevOps Project
 spec:
   owner: backstage/techdocs-core
   type: service
