@@ -41,17 +41,17 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
-    - title: Fill solution information
-      required:
-        - repoUrl
-      properties:
-        repoUrl:
-          title: Repository Location
-          type: string
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
+    # - title: Fill solution information
+    #   required:
+    #     - repoUrl
+    #   properties:
+    #     repoUrl:
+    #       title: Repository Location
+    #       type: string
+    #       ui:field: RepoUrlPicker
+    #       ui:options:
+    #         allowedHosts:
+    #           - github.com
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
