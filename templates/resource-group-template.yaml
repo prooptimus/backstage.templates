@@ -49,13 +49,14 @@ spec:
         solutionID:
           title: Solution ID
           type: string
+          description: Solution ID or RFD number
           ui:autofocus: true
           ui:options:
             rows: 5
         owner:
           title: Owner
           type: string
-          description: Solution ID or RFD
+          description: Solution owner
           ui:autofocus: true
           ui:help: 'Enter multiple owners separated by comma'
           ui:options:
