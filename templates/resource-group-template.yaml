@@ -16,7 +16,7 @@ spec:
     - recommended
   # these are the steps which are rendered in the frontend with the form input
   parameters:
-    - title: Fill in some steps
+    - title: Fill Resource Group Information
       required:
         - name
         - location
@@ -41,7 +41,7 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
-    - title: Choose a location
+    - title: Fill solution information
       required:
         - repoUrl
       properties:
