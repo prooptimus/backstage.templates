@@ -20,6 +20,7 @@ spec:
       required:
         - name
         - location
+        - environment
       properties:
         name:
           title: Name
@@ -44,6 +45,28 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
+        subscription:
+          title: SubscriptionId
+          type: string
+          description: Enter Subscription ID
+          ui:autofocus: true
+          ui:widget: text
+          ui:help: 'Enter Subscription ID'
+        environment:
+          title: Environment
+          type: string
+          description: Resource Group Environment
+          default: dev
+          enum:
+            - dev
+            - test
+            - prod
+            - poc
+          enumNames:
+            - Development
+            - Testing
+            - Production
+            - POC
       errorMessage:
         properties:
           name: 'First letter must be a letter, and only letters and numbers are allowed delimited by hyphens'
@@ -68,6 +91,15 @@ spec:
           ui:help: 'Enter multiple owners separated by comma'
           ui:options:
             rows: 10
+        businesContext:
+          title: Business Context
+          type: string
+          description: Business Context
+          ui:autofocus: true
+          ui:widget: textarea
+          ui:options:
+            rows: 4
+          ui:help: 'Enter business context'
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
