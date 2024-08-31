@@ -91,7 +91,6 @@ spec:
           ui:help: 'Enter multiple owners separated by comma'
           pattern: '^([a-zA-Z0-9._%+-]+@essity\.com)(,\s*[a-zA-Z0-9._%+-]+@essity\.com)*$'
           ui:options:
-            error: "Only Essity email addresses are allowed, separated by comma"
             rows: 1
         businesContext:
           title: Business Context
@@ -102,6 +101,9 @@ spec:
           ui:options:
             rows: 4
           ui:help: 'Enter business context'
+      errorMessage:
+        properties:
+          owner: 'Enter valid email address'
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
