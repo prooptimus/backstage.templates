@@ -87,10 +87,11 @@ spec:
           type: string
           description: Solution owner
           ui:autofocus: true
-          ui:widget: text
+          ui:widget: textarea
           ui:help: 'Enter multiple owners separated by comma'
-          ui:options:
-            rows: 10
+          pattern: '^([a-zA-Z0-9._%+-]+@essity\.com)(,\s*[a-zA-Z0-9._%+-]+@essity\.com)*$'
+          ui:errorMessages:
+            pattern: 'Email must be a valid Essity email ending in @essity.com'
         businesContext:
           title: Business Context
           type: string
