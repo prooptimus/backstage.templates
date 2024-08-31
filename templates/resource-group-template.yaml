@@ -29,9 +29,6 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
-          errorMessage:
-            properties:
-              name: First letter must be a letter, and only letters and numbers are allowed delimited by hyphens
         location:
           title: Location
           type: string
@@ -45,6 +42,9 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
+      errorMessage:
+        properties:
+          name: First letter must be a letter, and only letters and numbers are allowed delimited by hyphens
     - title: Fill solution information
       required:
         - solutionID
