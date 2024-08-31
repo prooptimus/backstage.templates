@@ -12,7 +12,7 @@ metadata:
     - resource-group
     - recommended
 spec:
-  owner: backstage/techdocs-core
+  owner: co-idp-launchpad-dev
   type: service
   # these are the steps which are rendered in the frontend with the form input
   parameters:
