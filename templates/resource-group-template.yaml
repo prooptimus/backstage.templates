@@ -64,8 +64,8 @@ spec:
           type: string
           description: Solution owner
           ui:autofocus: true
+          ui:widget: text
           ui:help: 'Enter multiple owners separated by comma'
-          ui:widget: textarea
           ui:options:
             rows: 10
 
