@@ -90,8 +90,9 @@ spec:
           ui:widget: textarea
           ui:help: 'Enter multiple owners separated by comma'
           pattern: '^([a-zA-Z0-9._%+-]+@essity\.com)(,\s*[a-zA-Z0-9._%+-]+@essity\.com)*$'
-          ui:errorMessages:
+          ui:errorMessage:
             pattern: 'Email must be a valid Essity email ending in @essity.com'
+          rows: 2
         businesContext:
           title: Business Context
           type: string
