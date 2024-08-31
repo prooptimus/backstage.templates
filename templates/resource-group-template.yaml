@@ -27,9 +27,10 @@ spec:
           description: Resource Group Name
           pattern: '^([a-zA-Z][a-zA-Z0-9]*)(-[a-zA-Z0-9]+)*$'
           ui:autofocus: true
-          errorMessage: First letter must be a letter, and only letters and numbers are allowed delimited by hyphens
           ui:options:
             rows: 5
+          ui:errorMessages:
+            pattern: "First letter must be a letter, and only letters and numbers are allowed delimited by hyphens"
         location:
           title: Location
           type: string
