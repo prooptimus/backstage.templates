@@ -51,7 +51,6 @@ spec:
           description: Enter Subscription ID
           ui:autofocus: true
           ui:widget: text
-          ui:help: 'Enter Subscription ID'
         environment:
           title: Environment
           type: string
