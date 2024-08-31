@@ -44,9 +44,6 @@ spec:
             - West Europe
             - North Europe
             - Sweden Central
-      errorMessage:
-        properties:
-          name: First letter must be a letter, and only letters and numbers are allowed delimited by hyphens
     - title: Fill solution information
       required:
         - solutionID
