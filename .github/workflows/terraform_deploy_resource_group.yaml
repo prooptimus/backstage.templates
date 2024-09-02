@@ -1,0 +1,76 @@
+name: 'Terraform Deploy Resource Group'
+
+on: 
+  workflow_dispatch:
+    inputs:
+      resource_group_name:
+        description: 'The name of the resource group to deploy'
+        required: true
+        default: 'my-resource-group'
+      subscription_id:
+        description: 'The Azure subscription ID'
+        required: true
+      environment:
+        description: 'The environment to deploy the resource group'
+        required: true
+        type: choice
+        options:
+          - 'dev'
+          - 'stage'
+          - 'prod'
+          - 'poc'
+        default: 'dev'
+      location:
+        description: 'The Azure region to deploy the resource group'
+        required: true
+        default: 'westeurope'
+      owner:
+        description: 'The owner of the resource group'
+        required: true
+      businessJustification:
+        description: 'The business justification for the resource group'
+        required: true
+        default: ''
+permissions:
+  contents: read
+
+
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    environment: production
+    env:
+      ARM_SUBSCRIPTION_ID: ${{ inputs.subscription_id }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+      TF_TOKEN_app_terraform_io: ${{ secrets.TF_TOKEN_app_terraform_io }}
+      TF_WORKSPACE: "resource-group-action"
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout Repo 
+      uses: actions/checkout@v4
+
+    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v1
+      with:
+        cli_config_credentials_token: ${{ secrets.TF_TOKEN_app_terraform_io }}
+
+    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
+    - name: Terraform Init
+      run: terraform init
+      working-directory: ./terraform/resource-group
+
+    # Checks that all Terraform configuration files adhere to a canonical format
+    - name: Terraform apply
+      run: terraform apply -auto-approve -var "resource_group_name=${{ inputs.resource_group_name }}" -var "location=${{ inputs.location }}" -var "owner=${{ inputs.owner }}" -var "businessJustification=${{ inputs.businessJustification }}" -var "environment=${{ inputs.environment }}"
+      working-directory: ./terraform/resource-group
