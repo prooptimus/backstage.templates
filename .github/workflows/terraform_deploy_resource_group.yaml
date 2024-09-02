@@ -23,6 +23,11 @@ on:
       location:
         description: 'The Azure region to deploy the resource group'
         required: true
+        type: choice
+        options:
+          - 'westeurope'
+          - 'northeurope'
+          - 'swedencentral'
         default: 'westeurope'
       owner:
         description: 'The owner of the resource group'
