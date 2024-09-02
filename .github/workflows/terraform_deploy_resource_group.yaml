@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       resource_group_name:
-        description: 'The name of the resource group to deploy'
+        description: 'The name of the resource group to deploy, rg prefix will be added and the environment suffix'
         required: true
         default: 'my-resource-group'
       subscription_id:
