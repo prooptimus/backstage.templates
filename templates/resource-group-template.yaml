@@ -115,7 +115,7 @@ spec:
       input:
         repoUrl: 'https://github.com/prooptimus/backstage.templates'
         workflowId: 'terraform_deploy_resource_group.yaml'
-        branch: main
+        branchOrTagName: main
         workflowInput:
           resourceGroupName: ${{ parameters.name }}
           location: ${{ parameters.location }}
