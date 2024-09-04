@@ -117,10 +117,10 @@ spec:
         workflowId: 'terraform_deploy_resource_group.yaml'
         branchOrTagName: 'main'
         workflowInput:
-          resourceGroupName: ${{ parameters.name }}
-          location: ${{ parameters.location }}
-          subscription: ${{ parameters.subscription }}
+          resource_group_name: ${{ parameters.name }}
+          subscription_id: ${{ parameters.subscription }}
           environment: ${{ parameters.environment }}
+          location: ${{ parameters.location }}
           solutionID: ${{ parameters.solutionID }}
           owner: ${{ parameters.owner }}
-          businesContext: ${{ parameters.businesContext }}
+          businessJustification: ${{ parameters.businesContext }}

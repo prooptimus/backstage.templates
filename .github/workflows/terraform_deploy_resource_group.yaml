@@ -29,6 +29,9 @@ on:
           - 'northeurope'
           - 'swedencentral'
         default: 'westeurope'
+      solutionID:
+        description: 'Enter the solution ID or RFD number'
+        required: true
       owner:
         description: 'The owner of the resource group'
         required: true
