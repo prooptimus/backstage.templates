@@ -109,32 +109,18 @@ spec:
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
-    - id: fetch-base
-      name: Fetch Base
-      action: fetch:template
+    - id: deploy
+      name: Deploy
+      action: github:actions:dispatch
       input:
-        url: ./template
-        values:
-          name: ${{ parameters.name }}
-
-    - id: fetch-docs
-      name: Fetch Docs
-      action: fetch:plain
-      input:
-        targetPath: ./community
-        url: https://github.com/backstage/community/tree/main/backstage-community-sessions
-
-    - id: publish
-      name: Publish
-      action: publish:github
-      input:
-        allowedHosts: ['github.com']
-        description: This is ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
-
-    - id: register
-      name: Register
-      action: catalog:register
-      input:
-        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
-        catalogInfoPath: '/catalog-info.yaml'
+        repoUrl: 'https://github.com/prooptimus/backstage.templates'
+        workflowId: 'terraform_deploy_resource_group.yaml'
+        branch: main
+        workflowInput:
+          resourceGroupName: ${{ parameters.name }}
+          location: ${{ parameters.location }}
+          subscription: ${{ parameters.subscription }}
+          environment: ${{ parameters.environment }}
+          solutionID: ${{ parameters.solutionID }}
+          owner: ${{ parameters.owner }}
+          businesContext: ${{ parameters.businesContext }}
