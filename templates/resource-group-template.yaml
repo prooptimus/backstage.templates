@@ -113,7 +113,7 @@ spec:
       name: Deploy
       action: github:actions:dispatch
       input:
-        repoUrl: 'https://github.com/prooptimus/backstage.templates'
+        repoUrl: 'github.com?repo=backstage.templates'
         workflowId: 'terraform_deploy_resource_group.yaml'
         branchOrTagName: 'main'
         workflowInput:
