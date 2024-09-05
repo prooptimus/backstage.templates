@@ -79,10 +79,22 @@ jobs:
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
-      run: terraform init
+      run: |
+        echo "Initialize the Terraform working directory"
+        # terraform init
       working-directory: ./terraform/resource-group
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform apply
-      run: terraform apply -auto-approve -var "resource_group_name=${{ inputs.resource_group_name }}" -var "location=${{ inputs.location }}" -var "owner=${{ inputs.owner }}" -var "businessJustification=${{ inputs.businessJustification }}" -var "environment=${{ inputs.environment }}"
+      if: ${{ inputs.action == 'apply' }}
+      run: |
+        echo "Create a new resource group"
+        # terraform apply -auto-approve -var "resource_group_name=${{ inputs.resource_group_name }}" -var "location=${{ inputs.location }}" -var "owner=${{ inputs.owner }}" -var "businessJustification=${{ inputs.businessJustification }}" -var "environment=${{ inputs.environment }}"
       working-directory: ./terraform/resource-group
+    
+    # Destroy the Terraform-managed infrastructure
+    - name: Terraform destroy
+      if: ${{ inputs.action == 'destroy' }}
+      run: |
+        echo "Destroy the resource group"
+        # terraform destroy -auto-approve -var "resource_group_name=${{ inputs.resource_group_name }}" -var "location=${{ inputs.location }}" -var "owner=${{ inputs.owner }}" -var "businessJustification=${{ inputs.businessJustification }}" -var "environment=${{ inputs.environment }}"
