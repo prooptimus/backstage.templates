@@ -36,7 +36,6 @@ on:
         required: true
       businessJustification:
         description: 'The business justification for the resource group'
-        required: true
         default: " "
       action:
         description: 'The action to perform'
