@@ -117,7 +117,7 @@ spec:
         workflowId: 'terraform_deploy_resource_group.yaml'
         branchOrTagName: 'main'
         workflowInput:
-          resource_group_name: ${{ parameters.name }}
+          resource_group_name: "${{ parameters.name }}"
           subscription_id: ${{ parameters.subscription }}
           environment: ${{ parameters.environment }}
           location: ${{ parameters.location }}
