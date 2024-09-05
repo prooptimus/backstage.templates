@@ -6,11 +6,11 @@ on:
       resource_group_name:
         description: 'The name of the resource group to deploy, rg prefix will be added and the environment suffix'
         required: true
-        default: 'my-resource-group'
+        # default: 'my-resource-group'
       subscription_id:
         description: 'The Azure subscription ID'
         required: true
-        default: "somthing"
+        # default: "somthing"
       environment:
         description: 'The environment to deploy the resource group'
         required: true
@@ -33,15 +33,15 @@ on:
       solutionID:
         description: 'Enter the solution ID or RFD number'
         required: true
-        default: "1234"
+        # default: "1234"
       owner:
         description: 'The owner of the resource group'
         required: true
-        default: "viaml.vij@essity.com"
+        # default: "viaml.vij@essity.com"
       businessJustification:
         description: 'The business justification for the resource group'
         required: true
-        default: "test"
+        # default: "test"
 permissions:
   contents: read
 
