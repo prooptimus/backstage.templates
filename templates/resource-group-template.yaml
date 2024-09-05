@@ -103,6 +103,18 @@ spec:
           ui:options:
             rows: 4
           ui:help: 'Enter business context'
+        action:
+          title: Action
+          type: string
+          description: Create / Destroy
+          ui:autofocus: true
+          default: apply
+          enum:
+            - apply
+            - destroy
+          enumNames:
+            - Create
+            - Destroy
       errorMessage:
         properties:
           owner: 'Enter valid email address'
@@ -124,3 +136,4 @@ spec:
           solutionID: ${{ parameters.solutionID }}
           owner: ${{ parameters.owner }}
           businessJustification: ${{ parameters.businesContext }}
+          action: ${{ parameters.action }}
