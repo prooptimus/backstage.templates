@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 # some metadata about the template itself
 metadata:
-  name: v1beta3-demo-template
+  name: v1beta-new-resource-group
   title: New Resource Group
   description: scaffolder v1beta3 template to create resource group
   tags:
