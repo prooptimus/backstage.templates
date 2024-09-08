@@ -137,7 +137,7 @@ spec:
           action: ${{ parameters.action }}
     - id: publish
       name: Publish
-      action: publish:github
+      action: github:repo:push
       input:
         repoUrl: 'github.com?repo=resource-group-components&owner=prooptimus'
         description: This is ${{ parameters.name }}
