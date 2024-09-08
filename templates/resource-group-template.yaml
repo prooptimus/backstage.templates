@@ -125,7 +125,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: ./components/resource-group-component.yaml
+        url: ./templates/components/resource-group-component.yaml
         values:
           name: ${{ parameters.name }}
           location: ${{ parameters.location }}
@@ -139,10 +139,11 @@ spec:
       name: Publish
       action: github:repo:push
       input:
-        repoUrl: 'github.com?repo=resource-group-components&owner=prooptimus'
+        repoUrl: 'github.com?repo=resource-groups-components&owner=prooptimus'
         description: This is ${{ parameters.name }}
         targetPath: 'components/resource-group-component.yaml'
-    
+
+
     - id: register
       name: Register
       action: catalog:register
