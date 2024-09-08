@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: replace-with-resource-group-name
+  description: replace-with-resource-group-description
+  links:
+    - url: replace-with-resource-group-url
+      title: Azure Portal
+  tags:
+    - resource-group
+    - azure
+    - infrastructure
+    - replace-with-owner
+    - replace-with-environment
+    - replace-with-solution-id
+spec:
+    type: service
+    lifecycle: replace-with-lifecycle
+    owner: replace-with-owner

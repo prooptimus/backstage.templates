@@ -121,6 +121,35 @@ spec:
 
   # here's the steps that are executed in series in the scaffolder backend
   steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: ./components/resource-group-component.yaml
+        values:
+          name: ${{ parameters.name }}
+          location: ${{ parameters.location }}
+          environment: ${{ parameters.environment }}
+          subscription: ${{ parameters.subscription }}
+          solutionID: ${{ parameters.solutionID }}
+          owner: ${{ parameters.owner }}
+          businesContext: ${{ parameters.businesContext }}
+          action: ${{ parameters.action }}
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        repoUrl: 'github.com?repo=backstage.templates&owner=prooptimus'
+        description: This is ${{ parameters.name }}
+        targetPath: 'components/resource-group-component.yaml'
+    
+    - id: register
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['publish'].output.repoContentsUrl }}
+        catalogInfoPath: 'components/resource-group-component.yaml'
+
     - id: deploy
       name: Deploy
       action: github:actions:dispatch
