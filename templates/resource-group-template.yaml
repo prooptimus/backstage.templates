@@ -138,11 +138,10 @@ spec:
 
     - id: publish
       name: Publish
-      action: github:repo:push
+      action: publish:github
       input:
         repoUrl: 'github.com?repo=resource-groups-components&owner=prooptimus'
         description: This is ${{ parameters.name }}
-        targetPath: 'components/resource-group-component.yaml'
 
 
     - id: register
