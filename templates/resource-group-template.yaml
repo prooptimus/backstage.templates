@@ -125,7 +125,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: https://github.com/prooptimus/backstage.templates/blob/main/templates/components/resource-group-component.yaml
+        url: https://github.com/prooptimus/backstage.templates/blob/main/templates/components/
         values:
           name: ${{ parameters.name }}
           location: ${{ parameters.location }}
@@ -135,6 +135,7 @@ spec:
           owner: ${{ parameters.owner }}
           businesContext: ${{ parameters.businesContext }}
           action: ${{ parameters.action }}
+
     - id: publish
       name: Publish
       action: github:repo:push

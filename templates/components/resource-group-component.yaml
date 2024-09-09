@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: replace-with-resource-group-name
-  description: replace-with-resource-group-description
+  name: {{ values.name | dump }}
+  description: ${{ values.businessContext | dump }}
   links:
     - url: replace-with-resource-group-url
       title: Azure Portal
