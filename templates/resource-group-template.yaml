@@ -136,12 +136,17 @@ spec:
           businesContext: ${{ parameters.businesContext }}
           action: ${{ parameters.action }}
 
-    - id: publish
-      name: Publish
-      action: publish:github
+    - action: github:repo:push
+      name: Create test repo with testuser as owner.
       input:
         repoUrl: 'github.com?repo=resource-groups-components&owner=prooptimus'
-        description: This is ${{ parameters.name }}
+
+    # - id: publish
+    #   name: Publish
+    #   action: publish:github
+    #   input:
+    #     repoUrl: 'github.com?repo=resource-groups-components&owner=prooptimus'
+    #     description: This is ${{ parameters.name }}
 
 
     - id: register
