@@ -125,7 +125,7 @@ spec:
       name: Fetch Base
       action: fetch:template
       input:
-        url: https://github.com/prooptimus/backstage.templates/blob/main/templates/components/
+        url: https://github.com/prooptimus/backstage.templates/blob/main/templates/components/resource_groups/
         values:
           name: ${{ parameters.name }}
           location: ${{ parameters.location }}
