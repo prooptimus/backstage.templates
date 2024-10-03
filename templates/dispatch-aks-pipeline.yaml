@@ -1,0 +1,61 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: azure-devops-pipeline-dispatch-template
+  title: Dispatch Azure DevOps Pipeline for aks
+  description: A template to dispatch an Azure DevOps pipeline with customizable parameters
+spec:
+  owner: co-idp-launchpad-dev
+  type: service
+  parameters:
+    - title: Azure DevOps Pipeline Details
+      required:
+        - organization
+        - project
+        - pipelineId
+      properties:
+        organization:
+          title: Azure DevOps Organization
+          type: string
+          description: The name of your Azure DevOps organization
+          ui:autofocus: true
+        project:
+          title: Azure DevOps Project
+          type: string
+          description: The name of your Azure DevOps project
+        pipelineId:
+          title: Pipeline ID
+          type: number
+          description: The ID of the pipeline to dispatch
+        branch:
+          title: Branch
+          type: string
+          description: The branch to run the pipeline on
+          default: main
+        customParam1:
+          title: Custom Parameter 1
+          type: string
+          description: A custom parameter to pass to the pipeline
+        customParam2:
+          title: Custom Parameter 2
+          type: string
+          description: Another custom parameter to pass to the pipeline
+
+  steps:
+    - id: dispatch-pipeline
+      name: Dispatch Azure DevOps Pipeline
+      action: azure:devops:pipeline:dispatch
+      input:
+        organization: ${{ parameters.organization }}
+        project: ${{ parameters.project }}
+        pipelineId: ${{ parameters.pipelineId }}
+        branch: ${{ parameters.branch }}
+        parameters:
+          customParam1: ${{ parameters.customParam1 }}
+          customParam2: ${{ parameters.customParam2 }}
+
+  output:
+    links:
+      - title: Pipeline Run
+        url: ${{ steps.dispatch-pipeline.output.buildUrl }}
+    buildId: ${{ steps.dispatch-pipeline.output.buildId }}
