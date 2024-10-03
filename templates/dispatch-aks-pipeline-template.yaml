@@ -27,6 +27,8 @@ spec:
           title: Pipeline ID
           type: number
           description: The ID of the pipeline to dispatch
+          ui:autofocus: true
+          ui:widget: text
         branch:
           title: Branch
           type: string
